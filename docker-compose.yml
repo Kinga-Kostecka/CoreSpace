@@ -1,0 +1,21 @@
+services:
+  frontend:
+    image: node:24-alpine
+    container_name: corespace-frontend
+    ports:
+      - "3000:3000"
+
+  backend:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    container_name: corespace-backend
+    ports:
+      - "5000:5000"
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: corespace-db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrong!Password
+    ports:
+      - "1433:1433"
