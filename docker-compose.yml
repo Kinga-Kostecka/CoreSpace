@@ -2,18 +2,19 @@ services:
   frontend:
     image: node:24-alpine
     container_name: corespace-frontend
+    tty: true
     ports:
       - "3000:3000"
 
   backend:
     image: mcr.microsoft.com/dotnet/sdk:9.0
     container_name: corespace-backend
+    tty: true
     ports:
       - "5001:5000"
 
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    platform: linux/amd64
     container_name: corespace-db
     environment:
       - ACCEPT_EULA=Y
