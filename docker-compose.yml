@@ -9,7 +9,7 @@ services:
     image: mcr.microsoft.com/dotnet/sdk:9.0
     container_name: corespace-backend
     ports:
-      - "5000:5000"
+      - "5001:5000"
 
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
