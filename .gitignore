@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+.vscode/
+/[Bb]in/
+/[Oo]bj/
+*.user
+*.suo
+node_modules/
+dist/
