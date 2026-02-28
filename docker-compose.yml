@@ -14,8 +14,7 @@ services:
       - "5001:5000"
 
   db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    platform: linux/amd64
+    image: mcr.microsoft.com/azure-sql-edge:latest
     container_name: corespace-db
     environment:
       - ACCEPT_EULA=Y
