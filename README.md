@@ -23,7 +23,7 @@ The project is built with a **Cloud-First** approach, leveraging Azure's Platfor
 
 ## 🏗 Project Roadmap
 * [x] **Phase 1:** Project initialization, architecture design, and C4 diagrams.
-* [ ] **Phase 2:** Dockerization and local environment setup.
+* [X] **Phase 2:** Dockerization and local environment setup.
 * [ ] **Phase 3:** Backend API development (Core logic & DB migrations).
 * [ ] **Phase 4:** Frontend implementation and Azure deployment.
 
@@ -57,8 +57,7 @@ Aplikacja została zaprojektowana w modelu PaaS (Platform as a Service), co zape
 ## 🏗 Status Projektu
 * [x] **Deklaracja tematu:** CoreSpace - System rezerwacji sal konferencyjnych.
 * [x] **Artefakt 1:** Zaplanowano strukturę 3-warstwową i mapowanie usług Azure.
-* [ ] **Artefakt 2:** Konfiguracja środowiska Docker & Docker Compose (w trakcie...).
-* [ ] **Artefakt 3:** Implementacja logiki CRUD i wdrożenie CI/CD.
+* [X] **Artefakt 2:** Konfiguracja środowiska Docker & Docker Compose.
 
 ## 🛠 Stos Technologiczny
 * **Frontend:** React + TypeScript + Vite
