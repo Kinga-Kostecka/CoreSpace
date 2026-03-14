@@ -1,6 +1,8 @@
 services:
   frontend:
-    image: node:20-alpine 
+    build: 
+      context: ./frontend
+      dockerfile: DOCKERFILE
     container_name: corespace-frontend
     tty: true
     ports:

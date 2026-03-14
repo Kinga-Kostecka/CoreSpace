@@ -16,14 +16,14 @@ namespace CoreSpace.Controllers
             _context = context;
         }
 
-        // 1. GET: api/Reservations (Lista wszystkich)
+        // 1. GET: api/Reservations
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reservation>>> GetReservations()
         {
             return await _context.Reservations.ToListAsync();
         }
 
-        // 2. GET: api/Reservations/5 (Szczegóły)
+        // 2. GET: api/Reservations/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Reservation>> GetReservation(int id)
         {
@@ -34,7 +34,7 @@ namespace CoreSpace.Controllers
             return reservation;
         }
 
-        // 3. POST: api/Reservations (Dodanie nowej)
+        // 3. POST: api/Reservations
         [HttpPost]
         public async Task<ActionResult<Reservation>> PostReservation(Reservation reservation)
         {
@@ -47,7 +47,7 @@ namespace CoreSpace.Controllers
             return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
         }
 
-        // 4. PUT: api/Reservations/5 (Edycja)
+        // 4. PUT: api/Reservations/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutReservation(int id, Reservation reservation)
         {
@@ -68,7 +68,7 @@ namespace CoreSpace.Controllers
             return NoContent();
         }
 
-        // 5. DELETE: api/Reservations/5 (Usuwanie)
+        // 5. DELETE: api/Reservations/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReservation(int id)
         {
