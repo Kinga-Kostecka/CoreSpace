@@ -38,12 +38,11 @@ namespace CoreSpace.Controllers
         [HttpPost]
         public async Task<ActionResult<Reservation>> PostReservation(Reservation reservation)
         {
-            [span_3](start_span)[span_4](start_span);
             if (string.IsNullOrEmpty(reservation.RoomName))
                 return BadRequest("Nazwa sali jest wymagana.");
 
             _context.Reservations.Add(reservation);
-            await _context.SaveAsync();
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
         }

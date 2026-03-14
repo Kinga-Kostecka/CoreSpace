@@ -7,10 +7,13 @@ services:
       - "3000:3000"
 
   backend:
-    build: ./backend
     container_name: corespace-backend
+    build:
+      context: ./backend
+      dockerfile: DOCKERFILE
     ports:
-      - "8081:8081" 
+      - "8081:8081"
+
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=Server=tcp:architecture-uni.database.windows.net,1433;Initial Catalog=free-sql-db-5582597;Persist Security Info=False;User ID=CloudSAb18ae67e;Password=Drzewko1a3.kk;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
