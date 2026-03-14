@@ -12,12 +12,12 @@ const Dashboard: React.FC = () => {
   const [reservations, setReservations] = useState<Reservation[]>([]);
   const [newRoom, setNewRoom] = useState('');
   const [user, setUser] = useState('');
-  const [start, setStart] = useState(''); // Nowe pole
-  const [end, setEnd] = useState('');     // Nowe pole
+  const [start, setStart] = useState(''); 
+  const [end, setEnd] = useState('');     
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = 'http://localhost:8081/api/Reservations';
+const API_URL = `${import.meta.env.VITE_API_URL}/api/Reservations`;
 
   const fetchReservations = async () => {
     setLoading(true);
