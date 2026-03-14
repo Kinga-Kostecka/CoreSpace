@@ -34,6 +34,7 @@ The project follows the **PaaS (Platform as a Service)** model for high scalabil
 ### 🛠 Quick Start (Docker)
 ```bash
 docker-compose up --build
+```
 
 ## 🛠 Tech Stack
 * **Frontend:** React, TypeScript, Vite, Tailwind CSS / MUI
