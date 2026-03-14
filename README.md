@@ -1,31 +1,39 @@
 CoreSpace by Kinga Kostecka 99730
 
-EN
 # CoreSpace | Enterprise Room Reservation System
+**Student:** Kinga Kostecka | **ID:** 99730
 
-CoreSpace is a cloud-native, 3-tier web application designed for efficient management of corporate meeting spaces and resources. Inspired by enterprise-grade EMS (Enterprise Management Systems), it simplifies the booking process for internal and client meetings.
+---
 
-## ☁️ Architecture & Azure Mapping
-The project is built with a **Cloud-First** approach, leveraging Azure's Platform as a Service (PaaS) offerings for scalability and maintainability.
+## EN (English Version)
 
-| Layer | Local Component | Azure Service |
-| :--- | :--- | :--- |
-| **Presentation (Frontend)** | React 19 (Vite) | Azure Static Web Apps |
-| **Application (Backend)** | ASP.NET Core Web API (.NET 9) | Azure App Service |
-| **Data (Database)** | SQL Server (Docker) | Azure SQL Database (Serverless) |
-| **Identity & Security** | JWT / Local Auth | Microsoft Entra ID (Planned) |
+CoreSpace is a cloud-native, 3-tier web application designed for efficient management of corporate meeting spaces. The system allows users to browse availability and book rooms in real-time, leveraging modern cloud architecture.
 
-## 🚀 Key Features (MVP)
-* **Resource Management:** Full CRUD operations for meeting rooms (capacity, equipment, location).
-* **Real-time Availability:** Smart filtering and booking validation to prevent scheduling conflicts.
-* **User Roles:** Distinct permissions for standard employees and office administrators.
-* **Cloud Integration:** Ready for seamless deployment via Azure DevOps/GitHub Actions.
+### ☁️ Architecture & Azure Mapping
+The project follows the **PaaS (Platform as a Service)** model for high scalability and cost-efficiency.
 
-## 🏗 Project Roadmap
-* [x] **Phase 1:** Project initialization, architecture design, and C4 diagrams.
-* [X] **Phase 2:** Dockerization and local environment setup.
-* [ ] **Phase 3:** Backend API development (Core logic & DB migrations).
-* [ ] **Phase 4:** Frontend implementation and Azure deployment.
+| Layer | Local Component | Azure Service | Status |
+| :--- | :--- | :--- | :--- |
+| **Presentation** | React 19 (Vite) | Azure Static Web Apps | ✅ Dockerized |
+| **Application** | ASP.NET Core (.NET 9) | Azure App Service | ✅ Dockerized |
+| **Data** | EF Core / SQL Server | Azure SQL (Serverless) | ✅ Connected |
+
+### 🚀 Key Features (Artifact 4 Update)
+* **Live API:** Fully functional REST API with CRUD operations for Reservations.
+* **Database Integration:** Seamless connection with Azure SQL Database.
+* **Modern UI:** Interactive Dashboard built with React and TypeScript.
+* **Containerization:** Orchestrated with Docker Compose for consistent environments.
+
+### 🏗 Project Roadmap
+* [x] **Phase 1:** C4 diagrams and architecture design.
+* [x] **Phase 2:** Docker Compose environment setup.
+* [x] **Phase 3:** Backend API & Azure SQL Database integration.
+* [x] **Phase 4:** Frontend Dashboard & Validation logic.
+* [ ] **Phase 5:** Advanced Features (Building/Room selection, Auth, Azure Deployment).
+
+### 🛠 Quick Start (Docker)
+```bash
+docker-compose up --build
 
 ## 🛠 Tech Stack
 * **Frontend:** React, TypeScript, Vite, Tailwind CSS / MUI
@@ -58,6 +66,8 @@ Aplikacja została zaprojektowana w modelu PaaS (Platform as a Service), co zape
 * [x] **Deklaracja tematu:** CoreSpace - System rezerwacji sal konferencyjnych.
 * [x] **Artefakt 1:** Zaplanowano strukturę 3-warstwową i mapowanie usług Azure.
 * [X] **Artefakt 2:** Konfiguracja środowiska Docker & Docker Compose.
+* [X] **Artefakt 3:** Warstwa prezentacji (React +Vite)
+* [X] **Artefakt 4:** Logika backendu (.NET 9 + Azure SQL).
 
 ## 🛠 Stos Technologiczny
 * **Frontend:** React + TypeScript + Vite
