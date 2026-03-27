@@ -16,69 +16,58 @@ namespace CoreSpace.Controllers
             _context = context;
         }
 
-        // 1. GET: api/Reservations
+        // 5.1. Uaktualniona metoda GetAll (mapowanie na DTO)
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Reservation>>> GetReservations()
+        public async Task<ActionResult<IEnumerable<ReservationReadDto>>> GetReservations()
         {
-            return await _context.Reservations.ToListAsync();
+            var reservations = await _context.Reservations.ToListAsync();
+
+            // Ręczne mapowanie na listę DTO
+            var reservationsDto = reservations.Select(r => new ReservationReadDto
+            {
+                Id = r.Id,
+                RoomName = r.RoomName,
+                ReservedBy = r.ReservedBy,
+                StartTime = r.StartTime.ToString("yyyy-MM-dd HH:mm"),
+                EndTime = r.EndTime.ToString("yyyy-MM-dd HH:mm"),
+                Status = r.Status
+            }).ToList();
+
+            return Ok(reservationsDto);
         }
 
-        // 2. GET: api/Reservations/5
+        // 5.1. Uaktualniona metoda GetById (zwraca DTO)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Reservation>> GetReservation(int id)
+        public async Task<ActionResult<ReservationReadDto>> GetReservation(int id)
         {
             var reservation = await _context.Reservations.FindAsync(id);
 
-            if (reservation == null) return NotFound();
+            if (reservation == null)
+            {
+                return NotFound();
+            }
 
-            return reservation;
+            var reservationDto = new ReservationReadDto
+            {
+                Id = reservation.Id,
+                RoomName = reservation.RoomName,
+                ReservedBy = reservation.ReservedBy,
+                StartTime = reservation.StartTime.ToString("yyyy-MM-dd HH:mm"),
+                EndTime = reservation.EndTime.ToString("yyyy-MM-dd HH:mm"),
+                Status = reservation.Status
+            };
+
+            return Ok(reservationDto);
         }
 
-        // 3. POST: api/Reservations
+        // Metoda POST (do testu zapisu z punktu 4)
         [HttpPost]
         public async Task<ActionResult<Reservation>> PostReservation(Reservation reservation)
         {
-            if (string.IsNullOrEmpty(reservation.RoomName))
-                return BadRequest("Nazwa sali jest wymagana.");
-
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetReservation), new { id = reservation.Id }, reservation);
-        }
-
-        // 4. PUT: api/Reservations/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutReservation(int id, Reservation reservation)
-        {
-            if (id != reservation.Id) return BadRequest();
-
-            _context.Entry(reservation).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.Reservations.Any(e => e.Id == id)) return NotFound();
-                else throw;
-            }
-
-            return NoContent();
-        }
-
-        // 5. DELETE: api/Reservations/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteReservation(int id)
-        {
-            var reservation = await _context.Reservations.FindAsync(id);
-            if (reservation == null) return NotFound();
-
-            _context.Reservations.Remove(reservation);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
     }
 }
