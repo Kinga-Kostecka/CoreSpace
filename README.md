@@ -70,7 +70,7 @@ Aplikacja została zaprojektowana w modelu PaaS (Platform as a Service), co zape
 * [X] **Artefakt 3:** Warstwa prezentacji (React +Vite)
 * [X] **Artefakt 4:** Logika backendu (.NET 9 + Azure SQL).
 * [X] **Artefakt 5:** Przygotowanie systemu pod wdrozenie w chmurze (w moim projekcie juz od poczatku pracy nad projektem wdrozenie istnialo)
-* [X] **Artefakt 6:** Wdrozenie do Azure (gotowe na wczesniejszym etapie)
+* [X] **Artefakt 6:** Wdrozenie do Azure (gotowe częściowo na wczesniejszym etapie)
 
 ## 🛠 Stos Technologiczny
 * **Frontend:** React + TypeScript + Vite
