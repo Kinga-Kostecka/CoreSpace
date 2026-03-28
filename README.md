@@ -29,7 +29,7 @@ The project follows the **PaaS (Platform as a Service)** model for high scalabil
 * [x] **Phase 2:** Docker Compose environment setup.
 * [x] **Phase 3:** Backend API & Azure SQL Database integration.
 * [x] **Phase 4:** Frontend Dashboard & Validation logic.
-* [ ] **Phase 5:** Advanced Features (Building/Room selection, Auth, Azure Deployment).
+* [x] **Phase 5:** Advanced Features (Building/Room selection, Auth, Azure Deployment).
 
 ### 🛠 Quick Start (Docker)
 ```bash
@@ -69,6 +69,8 @@ Aplikacja została zaprojektowana w modelu PaaS (Platform as a Service), co zape
 * [X] **Artefakt 2:** Konfiguracja środowiska Docker & Docker Compose.
 * [X] **Artefakt 3:** Warstwa prezentacji (React +Vite)
 * [X] **Artefakt 4:** Logika backendu (.NET 9 + Azure SQL).
+* [X] **Artefakt 5:** Przygotowanie systemu pod wdrozenie w chmurze (w moim projekcie juz od poczatku pracy nad projektem wdrozenie istnialo)
+* [X] **Artefakt 6:** Wdrozenie do Azure (gotowe na wczesniejszym etapie)
 
 ## 🛠 Stos Technologiczny
 * **Frontend:** React + TypeScript + Vite
